@@ -244,10 +244,12 @@
         android:id="@+id/restart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Restart"
-        android:textSize="20sp"
+        android:backgroundTint="#6C0094"
         android:paddingHorizontal="30sp"
         android:paddingVertical="5sp"
-        android:visibility="gone"
-        android:backgroundTint="#FF0000"/>
+        android:text="Next Level"
+        android:textSize="20sp"
+        android:visibility="visible"
+        app:strokeColor="#FFFFFF"
+        app:strokeWidth="0sp" />
 </LinearLayout>

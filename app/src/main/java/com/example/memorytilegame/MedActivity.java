@@ -2,6 +2,7 @@ package com.example.memorytilegame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import static android.view.View.INVISIBLE;
 import static android.view.View.VISIBLE;
@@ -124,7 +125,8 @@ public class MedActivity extends AppCompatActivity {
                 restart.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        recreate();
+                        Intent iNext = new Intent(getApplicationContext(), HardActivity.class);
+                        startActivity(iNext);
                     }
                 });
             }

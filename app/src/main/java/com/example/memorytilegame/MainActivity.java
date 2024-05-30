@@ -5,6 +5,7 @@ import static android.view.View.VISIBLE;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
@@ -116,7 +117,8 @@ int count = 0;
                     restart.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            recreate();
+                            Intent iNext = new Intent(getApplicationContext(), MedActivity.class);
+                            startActivity(iNext);
                         }
                     });
                 }
