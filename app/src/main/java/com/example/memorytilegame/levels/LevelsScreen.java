@@ -20,30 +20,25 @@ Button easy, medium, hard;
         easy = findViewById(R.id.easy);
         medium = findViewById(R.id.medium);
         hard = findViewById(R.id.hard);
+    }
 
-        easy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent iEasy = new Intent(LevelsScreen.this, EasyActivity.class);
-                startActivity(iEasy);
-            }
-        });
-
-        medium.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent iMedium = new Intent(LevelsScreen.this, MedActivity.class);
-                startActivity(iMedium);
-            }
-        });
-
-        hard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent iHard = new Intent(LevelsScreen.this, HardActivity.class);
-                startActivity(iHard);
-            }
-        });
-
+    public void startGame(View view) {
+        Intent intent = new Intent(LevelsScreen.this, GameActivity.class);
+        int cols, index;
+        if(view.equals(easy)) {
+            cols = 3;
+            index = 12;
+        }
+        else if(view.equals(medium)){
+            cols = 4;
+            index = 20;
+        }
+        else{
+            cols = 5;
+            index = 30;
+        }
+        intent.putExtra("noOfColumns", cols);
+        intent.putExtra("index", index);
+        startActivity(intent);
     }
 }

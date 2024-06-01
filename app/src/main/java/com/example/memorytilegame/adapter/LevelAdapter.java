@@ -1,5 +1,6 @@
 package com.example.memorytilegame.adapter;
 
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.media.Image;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,21 +24,25 @@ import com.example.memorytilegame.R;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Stack;
 
 public class LevelAdapter extends RecyclerView.Adapter<LevelAdapter.ViewHolder> {
     Context context;
-    ArrayList<Integer> animalList;
+    List<Integer> animalList;
     RecyclerView recyclerView;
     ImageView winGame;
     Stack <Integer> imgStack = new Stack<Integer>();
     Stack <ImageView> imgOfBlock = new Stack<ImageView>();
+    int noOfCols;
     int top = 0, count = 0;
-    public LevelAdapter(Context context, ArrayList<Integer> animalList, RecyclerView recyclerView, ImageView winGame) {
+    public LevelAdapter(Context context, List<Integer> animalList, RecyclerView recyclerView, ImageView winGame, int noOfCols) {
         this.context = context;
         this.animalList = animalList;
         this.recyclerView = recyclerView;
         this.winGame = winGame;
+        this.noOfCols = noOfCols;
+        Collections.shuffle(animalList);
     }
 
     @NonNull
@@ -48,6 +54,21 @@ public class LevelAdapter extends RecyclerView.Adapter<LevelAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        ViewGroup.LayoutParams layoutParams = holder.cardView.getLayoutParams();
+        if(noOfCols == 5){
+            layoutParams.height = 164;
+            layoutParams.width = 164;
+        }
+        else if(noOfCols == 4){
+            layoutParams.height = 200;
+            layoutParams.width = 200;
+        }
+        else{
+            layoutParams.height = 250;
+            layoutParams.width = 250;
+        }
+
+        holder.cardView.setLayoutParams(layoutParams);
 
         holder.imgBlock.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -140,10 +161,12 @@ public class LevelAdapter extends RecyclerView.Adapter<LevelAdapter.ViewHolder> 
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         ImageView imgBlock;
+        CardView cardView;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             imgBlock = itemView.findViewById(R.id.imgBlock);
+            cardView = itemView.findViewById(R.id.cardView);
 
         }
     }

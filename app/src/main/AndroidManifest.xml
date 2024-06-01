@@ -16,7 +16,7 @@
             android:name=".levels.EasyActivity"
             android:exported="false" />
         <activity
-            android:name=".levels.HardActivity"
+            android:name=".levels.GameActivity"
             android:exported="false" />
         <activity
             android:name=".levels.MedActivity"
