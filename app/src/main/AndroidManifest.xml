@@ -13,16 +13,19 @@
         android:theme="@style/Theme.MemoryTileGame"
         tools:targetApi="31">
         <activity
-            android:name=".HardActivity"
+            android:name=".levels.EasyActivity"
             android:exported="false" />
         <activity
-            android:name=".MedActivity"
+            android:name=".levels.HardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".levels.MedActivity"
             android:exported="true" />
         <activity
             android:name=".TutorialScreen"
             android:exported="true" />
         <activity
-            android:name=".LevelsScreen"
+            android:name=".levels.LevelsScreen"
             android:exported="true" />
         <activity
             android:name=".HomeScreen"

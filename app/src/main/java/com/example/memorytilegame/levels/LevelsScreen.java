@@ -1,4 +1,4 @@
-package com.example.memorytilegame;
+package com.example.memorytilegame.levels;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.memorytilegame.R;
 
 public class LevelsScreen extends AppCompatActivity {
 
@@ -22,7 +24,7 @@ Button easy, medium, hard;
         easy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent iEasy = new Intent(getApplicationContext(), MainActivity.class);
+                Intent iEasy = new Intent(LevelsScreen.this, EasyActivity.class);
                 startActivity(iEasy);
             }
         });
@@ -30,7 +32,7 @@ Button easy, medium, hard;
         medium.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent iMedium = new Intent(getApplicationContext(), MedActivity.class);
+                Intent iMedium = new Intent(LevelsScreen.this, MedActivity.class);
                 startActivity(iMedium);
             }
         });
@@ -38,7 +40,7 @@ Button easy, medium, hard;
         hard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent iHard = new Intent(getApplicationContext(), HardActivity.class);
+                Intent iHard = new Intent(LevelsScreen.this, HardActivity.class);
                 startActivity(iHard);
             }
         });
