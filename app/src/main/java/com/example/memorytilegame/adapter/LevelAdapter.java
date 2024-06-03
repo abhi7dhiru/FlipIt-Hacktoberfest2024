@@ -164,7 +164,7 @@ public class LevelAdapter extends RecyclerView.Adapter<LevelAdapter.ViewHolder> 
                     v.animate()
                             .scaleX(1f)
                             .scaleY(1f)
-                            .setDuration(100)
+                            .setDuration(50)
                             .setInterpolator(new DecelerateInterpolator())
                             .start();
                 }).start();
@@ -226,11 +226,18 @@ public class LevelAdapter extends RecyclerView.Adapter<LevelAdapter.ViewHolder> 
         btnDone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dialog.dismiss();
-                context.startActivity(new Intent(context, LevelsScreen.class));
-                if (context instanceof GameActivity) {
-                    ((GameActivity) context).finish();
-                }
+                startAnimation(view);
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        context.startActivity(new Intent(context, LevelsScreen.class));
+                        if (context instanceof GameActivity) {
+                            ((GameActivity) context).finish();
+                        }
+                        dialog.dismiss();
+                    }
+                }, 100);
+
             }
         });
     }

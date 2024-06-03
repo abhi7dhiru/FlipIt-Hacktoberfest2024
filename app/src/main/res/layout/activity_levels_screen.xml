@@ -52,7 +52,7 @@
             android:id="@+id/easy"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="180dp"
+            android:layout_marginTop="196dp"
             android:backgroundTint="@color/white"
             android:onClick="startGame"
             android:paddingHorizontal="40dp"

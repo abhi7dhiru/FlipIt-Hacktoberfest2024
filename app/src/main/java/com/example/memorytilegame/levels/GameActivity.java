@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.view.View;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -118,12 +119,19 @@ public class GameActivity extends AppCompatActivity {
                 resumeTimer.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        blackOverlay.setVisibility(View.GONE);
-                        touchInterceptor.setVisibility(View.GONE);
-                        countdown.setVisibility(View.GONE);
-                        startTimer(); // Start the timer without resetting elapsedTime
+                        startAnimation(view);
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                blackOverlay.setVisibility(View.GONE);
+                                touchInterceptor.setVisibility(View.GONE);
+                                countdown.setVisibility(View.GONE);
+                                startTimer(); // Start the timer without resetting elapsedTime
 
-                        resumeTimer.setVisibility(View.GONE);
+                                resumeTimer.setVisibility(View.GONE);
+                            }
+                        }, 100);
+
                     }
                 });
             }
@@ -222,5 +230,21 @@ public class GameActivity extends AppCompatActivity {
         }
         else if(resumeTimer.getVisibility() == View.GONE) pauseGame();
         else finish();
+    }
+
+    public void startAnimation(View v){
+        v.animate()
+                .scaleX(0.95f)
+                .scaleY(0.95f)
+                .setDuration(50)
+                .setInterpolator(new DecelerateInterpolator())
+                .withEndAction(() -> {
+                    v.animate()
+                            .scaleX(1f)
+                            .scaleY(1f)
+                            .setDuration(50)
+                            .setInterpolator(new DecelerateInterpolator())
+                            .start();
+                }).start();
     }
 }
