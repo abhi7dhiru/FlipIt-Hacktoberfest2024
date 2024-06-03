@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,36 +10,72 @@
     android:orientation="vertical">
 
     <ImageView
+        android:id="@+id/imageView3"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:src="@drawable/app_logo"/>
+        android:layout_marginTop="104dp"
+        android:src="@drawable/app_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/play"
-        android:layout_width="wrap_content"
+        android:layout_width="300sp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70sp"
-        android:backgroundTint="#FFBF00"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="@color/white"
         android:paddingHorizontal="40dp"
         android:paddingVertical="5dp"
-        app:cornerRadius="20dp"
         android:text="Play"
         android:textColor="#0E1E35"
         android:textSize="40sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <Button
         android:id="@+id/tutorial"
-        app:cornerRadius="20dp"
-        android:layout_width="wrap_content"
+        android:layout_width="300sp"
         android:layout_height="wrap_content"
-        android:text="How To Play"
-        android:backgroundTint="#FFBF00"
-        android:textColor="#0E1E35"
-        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/white"
         android:paddingHorizontal="40dp"
         android:paddingVertical="5dp"
-        android:textSize="40sp"
-        android:layout_marginTop="20sp"/>
+        android:text="How To Play"
+        android:textColor="#0E1E35"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/play" />
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="130sp"
+        android:layout_height="130sp"
+        android:src="@drawable/team_flash_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tutorial"
+        app:layout_constraintVertical_bias="0.0"/>
 
-</LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="A Team Flash Project"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView2"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="25dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
