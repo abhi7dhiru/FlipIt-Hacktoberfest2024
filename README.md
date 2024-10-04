@@ -1,6 +1,7 @@
 # 🎮 Flip It - Memory Tile Game
 
-# Maintainer - Farhaan Shaikh
+# Maintainer 
+[Farhaan Shaikh](https://www.github.com/FSfarhaan)
 
 ## 📖 Description
 
