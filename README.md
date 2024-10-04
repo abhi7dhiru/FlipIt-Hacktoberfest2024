@@ -1,5 +1,7 @@
 # 🎮 Flip It - Memory Tile Game
 
+# Maintainer - Farhaan Shaikh
+
 ## 📖 Description
 
 **Flip It** is an engaging Android game developed in Java where players aim to identify matching pairs by memorizing the position of each card. The game tests and enhances your memory skills across different levels of difficulty. 
