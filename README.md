@@ -24,7 +24,7 @@
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/your-username/Flip-It.git
+    git clone https://github.com/CSI-DMCE-2024/Flip-It.git
     ```
 2. **Open the project in Android Studio**:
     - Open Android Studio
